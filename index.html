@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abstract Earth - Home</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #f4f3f1;
+  color: #2e2e2e;
+}
+
+header{
+background-color: #2f4f4f;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 1rem 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #98fb98;
+}
+footer {
+  text-align: center;
+  background-color: #2f4f4f;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Home Page Layout */
+.home-section {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 90vh;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #e5ede2;
+}
+
+.home-left {
+  flex: 1;
+  padding: 2rem;
+}
+
+.home-left h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2f4f4f;
+}
+
+.home-left p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.shop-btn {
+  background-color: #3b7a57;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+
+.shop-btn:hover {
+  background-color: #2e5e44;
+}
+
+.home-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-img {
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+/* Image Deck Container */
+.image-deck {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  margin-right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Shared styles for cards */
+.image-deck .card {
+  position: absolute;
+  width: 250px;
+  height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease, z-index 0.3s;
+  cursor: pointer;
+}
+
+/* Images */
+.image-deck .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Positioning to fan like a deck */
+#card1 {
+  transform: rotate(-10deg) translateX(-80px);
+  z-index: 1;
+}
+#card2 {
+  transform: rotate(0deg);
+  z-index: 2;
+}
+#card3 {
+  transform: rotate(10deg) translateX(80px);
+  z-index: 1;
+}
+
+/* Hover effect */
+.image-deck .card:hover {
+  transform: rotate(0deg) scale(1.1);
+  z-index: 3;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🌍 Abstract Earth</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="home-section">
+    <div class="home-left">
+      <h1 class="fade-in">Where Earth Meets Expression</h1>
+      <p class="fade-in">Abstract Earth brings you premium hand-printed hoodies and tees inspired by the soul of the Earth. 🌱</p>
+      <button class="shop-btn fade-in" onclick="window.location.href='products.html'">Shop Now</button>
+    </div>
+<div class="image-deck">
+  <div class="card" id="card1">
+    <img src="home.jpg" alt="Tie dye hoodie 1">
+  </div>
+  <div class="card" id="card3">
+    <img src="home1.jpg" alt="Tie dye hoodie 3">
+  </div>
+</div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Abstract Earth. All rights reserved.</p>
+        <p>Website designed by Mbali Mahlangu</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  // Fade-in animation for home page elements
+  const fadeInElements = document.querySelectorAll(".fade-in");
+
+  fadeInElements.forEach((el, index) => {
+    setTimeout(() => {
+      el.style.opacity = 1;
+      el.style.transform = "translateY(0)";
+    }, index * 200); // stagger effect
+  });
+});
+  </script>
+</body>
+</html>

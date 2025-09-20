@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Abstract Earth - About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Important for mobile scaling -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #98fb98;
+    }
+
+    header {
+      background-color: #2f4f4f;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      padding: 1rem 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #2f4f4f;
+      color: white;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Square frame slideshow */
+    .about-img {
+      flex: 0 0 250px;
+      max-width: 250px;
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      border: 4px solid #2f4f4f;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .about-img img.active {
+      opacity: 1;
+    }
+
+    .about-text {
+      flex: 1 1 300px;
+      max-width: 600px;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .values-section {
+      text-align: center;
+      margin: 60px 20px;
+    }
+
+    .values-section h2 {
+      font-size: 26px;
+      margin-bottom: 40px;
+      color: #222;
+    }
+
+    .values-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .value-box {
+      flex: 1 1 220px;
+      max-width: 250px;
+      min-width: 180px;
+      background-color: #fff;
+      border-radius: 12px;
+      color: black;
+      padding: 20px;
+      box-sizing: border-box;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out, transform 0.4s ease;
+      cursor: pointer;
+    }
+
+    .value-box h3 {
+      color: black;
+      margin-bottom: 10px;
+    }
+
+    .value-box p {
+      font-size: 14px;
+      color: #222;
+    }
+
+    .value-box.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .value-box:hover {
+      transform: scale(1.08);
+    }
+
+    /* Individual block colors */
+    #value1 { background-color: #ffe4e1; }
+    #value2 { background-color: #e0ffff; }
+    #value3 { background-color: #f5f5dc; }
+    #value4 { background-color: #e6e6fa; }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-img {
+        max-width: 200px;
+        margin-bottom: 20px;
+      }
+
+      .about-text p {
+        font-size: 15px;
+      }
+
+      .value-box {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🌍 Abstract Earth</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html">Products</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="about-container">
+    <!-- Square slideshow frame -->
+    <div class="about-img">
+      <img src="about1.jpg" alt="Owner Image 1" class="active">
+      <img src="about2.jpg" alt="Owner Image 2">
+    </div>
+
+    <div class="about-text">
+      <p>Welcome to our store. We are dedicated to bringing you the best in tech and lifestyle products at unbeatable prices. Our team works tirelessly to source high-quality items that meet your needs and exceed your expectations.</p>
+      <p>With a focus on customer satisfaction, fast delivery, and affordable prices, we’re here to make your shopping experience easy, enjoyable, and reliable. Join our growing community of happy customers today.</p>
+    </div>
+  </div>
+
+  <div class="values-section">
+    <h2>Our Values</h2>
+    <div class="values-grid">
+      <div class="value-box" id="value1">
+        <h3>Integrity</h3>
+        <p>We operate with honesty, transparency, and a strong moral compass in all our dealings.</p>
+      </div>
+      <div class="value-box" id="value2">
+        <h3>Customer First</h3>
+        <p>Our customers are the heart of everything we do. We aim to exceed their expectations.</p>
+      </div>
+      <div class="value-box" id="value3">
+        <h3>Innovation</h3>
+        <p>We embrace new ideas and technology to deliver better products and services.</p>
+      </div>
+      <div class="value-box" id="value4">
+        <h3>Quality</h3>
+        <p>We are committed to providing products that meet high standards of quality and reliability.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Abstract Earth. All rights reserved.</p>
+    <p>Website designed by Mbali Mahlangu</p>
+  </footer>
+
+  <script>
+    // Sequential animation of value blocks
+    const values = document.querySelectorAll('.value-box');
+    values.forEach((box, i) => {
+      setTimeout(() => {
+        box.classList.add('show');
+      }, i * 600);
+    });
+
+    // Slideshow for owner images
+    const slides = document.querySelectorAll('.about-img img');
+    let current = 0;
+
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 5000); // 5 seconds
+  </script>
+
+</body>
+</html>

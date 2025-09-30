@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Abstract Earth - About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Important for mobile scaling -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #98fb98;
+    }
+
+    header {
+      background-color: #2f4f4f;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      padding: 1rem 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #2f4f4f;
+      color: white;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Larger slideshow frame */
+    .about-img {
+      flex: 0 0 320px;
+      max-width: 320px;
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      border: 4px solid #2f4f4f;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .about-img img.active {
+      opacity: 1;
+    }
+
+    /* Instagram link */
+    .social-link {
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .social-link img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .social-link a {
+      color: #2f4f4f;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .about-text {
+      flex: 1 1 400px;
+      max-width: 650px;
+    }
+
+    .about-text p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .values-section {
+      text-align: center;
+      margin: 60px 20px;
+    }
+
+    .values-section h2 {
+      font-size: 28px;
+      margin-bottom: 40px;
+      color: #222;
+    }
+
+    .values-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .value-box {
+      flex: 1 1 220px;
+      max-width: 250px;
+      min-width: 180px;
+      background-color: #fff;
+      border-radius: 12px;
+      color: black;
+      padding: 20px;
+      box-sizing: border-box;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out, transform 0.4s ease;
+      cursor: pointer;
+    }
+
+    .value-box h3 {
+      color: black;
+      margin-bottom: 10px;
+    }
+
+    .value-box p {
+      font-size: 14px;
+      color: #222;
+    }
+
+    .value-box.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .value-box:hover {
+      transform: scale(1.08);
+    }
+
+    /* Individual block colors */
+    #value1 { background-color: #ffe4e1; }
+    #value2 { background-color: #e0ffff; }
+    #value3 { background-color: #f5f5dc; }
+    #value4 { background-color: #e6e6fa; }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-img {
+        max-width: 260px;
+        margin-bottom: 20px;
+      }
+
+      .about-text p {
+        font-size: 16px;
+      }
+
+      .value-box {
+        max-width: 90%;
+      }
+
+      .social-link {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🌍 Abstract Earth</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html">Products</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="about-container">
+    <!-- Square slideshow frame -->
+    <div>
+      <div class="about-img">
+        <img src="about1.jpg" alt="Owner Image 1" class="active">
+        <img src="about2.jpg" alt="Owner Image 2">
+        <img src="about3.jpg" alt="Owner Image 3">
+        <img src="about4.jpg" alt="Owner Image 4">
+      </div>
+      <!-- Instagram link -->
+      <div class="social-link">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        <a href="https://www.instagram.com/abstract_earth_?igsh=MWduZGEzZ3pveXNtcg==" target="_blank">@abstract_earth_</a>
+      </div>
+    </div>
+
+    <div class="about-text">
+      <p>Welcome to our store. We are dedicated to bringing you the best in tech and lifestyle products at unbeatable prices. <b>"Abstract Earth"🌍</b> focusses on unique and creative designs inspired by nature or the Earth.</p>
+      <p>Using 100% cotton T-shirts and incorporating tie-dye indicates a commitment to an artistic expression. Embracing a more conceptual or artistic approach, the term <i>"abstract"</i> conveys a sense of uniqueness and originality.</p>
+    </div>
+  </div>
+
+  <div class="values-section">
+    <h2>Our Values</h2>
+    <div class="values-grid">
+      <div class="value-box" id="value1">
+        <h3>Integrity</h3>
+        <p>We operate with honesty, transparency, and a strong moral compass in all our dealings.</p>
+      </div>
+      <div class="value-box" id="value2">
+        <h3>Customer First</h3>
+        <p>Our customers are the heart of everything we do. We aim to exceed their expectations.</p>
+      </div>
+      <div class="value-box" id="value3">
+        <h3>Innovation</h3>
+        <p>We embrace new ideas and technology to deliver better products and services.</p>
+      </div>
+      <div class="value-box" id="value4">
+        <h3>Quality</h3>
+        <p>We are committed to providing products that meet high standards of quality and reliability.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+  <p>&copy; 2025 🌍 Abstract Earth. All rights reserved.</p>
+  <p>
+    Designed by 
+    <a href="http://tiktok.com/@mbalz_creations" target="_blank" style="color: white; text-decoration: underline;">
+      Mbali Mahlangu
+    </a>
+  </p>
+</footer>
+
+
+  <script>
+    // Sequential animation of value blocks
+    const values = document.querySelectorAll('.value-box');
+    values.forEach((box, i) => {
+      setTimeout(() => {
+        box.classList.add('show');
+      }, i * 600);
+    });
+
+    // Slideshow for owner images
+    const slides = document.querySelectorAll('.about-img img');
+    let current = 0;
+
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 5000); // 5 seconds
+  </script>
+
+</body>
+</html>
